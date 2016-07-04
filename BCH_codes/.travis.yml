@@ -1,0 +1,19 @@
+language: clang
+
+sudo: required
+dist: trusty
+
+
+branches:
+  only:
+    - master
+
+addons:
+  apt:
+    packages:
+    - build-essential
+    - gcc
+
+script:
+  - make
+  - make test
