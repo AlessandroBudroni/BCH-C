@@ -1401,8 +1401,6 @@ int ValidateBCH128( const unsigned char* pInput, int inputLen, unsigned char* pP
     memcpy(ecc, &pInput[inputLen-t], t);
     
     numOfError = decode_bch(bch, pPayload, *pPayloadLen, ecc, NULL, NULL, err_location);
-    if (numOfError >= 0)
-        printf("");
     
     if (numOfError > 0)
         correct_bch(bch, pPayload, *pPayloadLen, err_location, numOfError);

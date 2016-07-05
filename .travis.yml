@@ -6,7 +6,6 @@ compiler:
 sudo: required
 dist: trusty
 
-
 branches:
   only:
     - master
