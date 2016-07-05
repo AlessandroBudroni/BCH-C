@@ -74,7 +74,7 @@ int main(){
             printf("     - failed with %d errors test n. %d\n",errors,j-1);
         }
     }
-    printf("\nfinished %d tests, %d%% passed!\n\n", (count)/10,j-1);
+    printf("\nfinished %d tests, %d%% passed!\n\n",j-1, (count)/10);
     
     count = 1000;
     printf("Test detecting:...    \n");
