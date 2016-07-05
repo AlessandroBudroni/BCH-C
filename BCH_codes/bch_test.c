@@ -62,7 +62,7 @@ int main(){
         errors = rand() % (pEncodedLen-len_msg+1);
     
         for (i= 0; i<errors; i++){
-            pEncoded[rand() % (pEncodedLen+1)] ^= ((unsigned char) 2 << ((rand() % 8)) & 0xFF);
+            pEncoded[rand() % (pEncodedLen+1)] ^= ((unsigned char) 1 << ((rand() % 8)) & 0xFF);
         }
     
         // Decode and correct
@@ -97,7 +97,7 @@ int main(){
         errors = (rand() % 50);
         
         for (i= 0; i<errors; i++){
-            pEncoded[rand() % (pEncodedLen+1)] ^= ((unsigned char) 2 << ((rand() % 8)) & 0xFF);
+            pEncoded[rand() % (pEncodedLen+1)] ^= ((unsigned char) 1 << ((rand() % 8)) & 0xFF);
         }
         
         // Decode and correct
