@@ -26,7 +26,6 @@
 #include <string.h>
 #include <stdio.h>
 #include <time.h>
-#include <math.h>
 
 #include "bch_functions.h"
 
@@ -63,7 +62,7 @@ int main(){
         errors = rand() % (pEncodedLen-len_msg+1);
     
         for (i= 0; i<errors; i++){
-            pEncoded[rand() % (pEncodedLen+1)] ^= ((unsigned char) pow(2,(rand() % 8)) & 0xFF);
+            pEncoded[rand() % (pEncodedLen+1)] ^= ((unsigned char) 2 << ((rand() % 8)) & 0xFF);
         }
     
         // Decode and correct
@@ -96,7 +95,7 @@ int main(){
         errors = (rand() % 50);
         
         for (i= 0; i<errors; i++){
-            pEncoded[rand() % (pEncodedLen+1)] ^= ((unsigned char) pow(2,(rand() % 8)) & 0xFF);
+            pEncoded[rand() % (pEncodedLen+1)] ^= ((unsigned char) 2 << ((rand() % 8)) & 0xFF);
         }
         
         // Decode and correct

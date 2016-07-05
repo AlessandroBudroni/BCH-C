@@ -5,7 +5,7 @@ bch_codec.o: bch_functions.c bch_functions.h
 	$(CC) -c -o $@ $(CFLAGS) $<
 
 bch_test: bch_test.o bch_functions.o
-	$(CXX) -o $@ $(CXXFLAGS) $^
+	$(CC) -o $@ $(CXXFLAGS) $^
 
 test: bch_test
 	./bch_test
