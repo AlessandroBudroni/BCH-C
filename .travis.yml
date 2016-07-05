@@ -10,10 +10,11 @@ branches:
 
 addons:
   apt:
-    packages:
+    packages: 
     - build-essential
     - gcc
 
 script:
+  - cd BCH_codes
   - make
   - make test
