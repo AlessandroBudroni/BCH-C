@@ -34,7 +34,7 @@
 int main(){
     
     time_t t;
-    int i,j, pEncodedLen, pDecodedLen, errors, ret, maxEncodedLen = len_msg+(len_msg/4);
+    int i,j, count = 1000, pEncodedLen, pDecodedLen, errors, ret, maxEncodedLen = len_msg+(len_msg/4);
     unsigned char msg[len_msg], original_msg[len_msg];
     unsigned char pEncoded[maxEncodedLen], pDecoded[len_msg];
     
@@ -70,11 +70,13 @@ int main(){
         ValidateBCH128(pEncoded, pEncodedLen, pDecoded, maxEncodedLen, &pDecodedLen);
     
         if(strncmp((char*)original_msg, (char*)pDecoded, len_msg)){
+            count--;
             printf("     - failed with %d errors test n. %d\n",errors,j-1);
         }
     }
-    printf("\nfinished %d tests!\n\n",j-1);
-
+    printf("\nfinished %d tests, %d%% passed!\n\n", (count)/10,j-1);
+    
+    count = 1000;
     printf("Test detecting:...    \n");
     for (j = 1; j<=1000; j++) {
         
@@ -104,10 +106,11 @@ int main(){
         
         if(ret == 0 && strncmp((char*)original_msg, (char*)pDecoded, len_msg))
         {
+            count--;
             printf("     - failed with %d errors, test n. %d\n",errors,j-1);
         }
     }
-    printf("finished %d tests!\n\n",j-1);
+    printf("finished %d tests, %d%% passed!\n\n",j-1,(count)/10);
     printf("End testing.\n");
     
     return 0;
