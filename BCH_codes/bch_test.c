@@ -29,12 +29,12 @@
 
 #include "bch_functions.h"
 
-#define len_msg 4
+#define len_msg 16
 
 int main(){
     
     time_t t;
-    int i,j, count = 1000, pEncodedLen, pDecodedLen, errors, ret, maxEncodedLen = len_msg+7;
+    int i,j, count = 1000, pEncodedLen, pDecodedLen, errors, ret, maxEncodedLen = len_msg+6;
     unsigned char msg[len_msg], original_msg[len_msg];
     unsigned char pEncoded[maxEncodedLen], pDecoded[len_msg];
     
@@ -59,7 +59,7 @@ int main(){
         
         // Generate errors
     
-        errors = rand() % (8+1);
+        errors = rand() % (maxEncodedLen-len_msg+1);
     
         for (i= 0; i<errors; i++){
             pEncoded[rand() % (pEncodedLen+1)] ^= ((unsigned char) 1 << ((rand() % 8)) & 0xFF);
@@ -77,7 +77,7 @@ int main(){
     printf("\nfinished %d tests, %d%% passed!\n\n",j-1, (count)/10);
     
     count = 1000;
-    printf("Test detecting:...    \n");
+    printf("Test detecting more than %d errors:...    \n", maxEncodedLen-len_msg);
     for (j = 1; j<=1000; j++) {
         
         // Generate message
