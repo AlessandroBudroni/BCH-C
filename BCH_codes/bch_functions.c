@@ -1359,7 +1359,7 @@ void correct_bch(struct bch_control *bch, uint8_t *data, unsigned int len,unsign
 void GenerateBCH128( const unsigned char* pPayload, int payloadLen, unsigned char* pResult, int maxResultLen, int* pResultLen )
 {
     const int m = 8, prim_poly = 285; // parameters set for 128-bit message
-    int t = 6;
+    int t = 4;
     
     struct bch_control * bch = init_bch(m,t,prim_poly);
     
@@ -1387,7 +1387,7 @@ void GenerateBCH128( const unsigned char* pPayload, int payloadLen, unsigned cha
 int ValidateBCH128( const unsigned char* pInput, int inputLen, unsigned char* pPayload, int maxPayloadLen, int* pPayloadLen )
 {
     const int m = 8, prim_poly = 285; // parameters set for 128-bit message
-    int t = 6;
+    int t = 4;
     int numOfError = 0;
     
     *pPayloadLen = inputLen-t;

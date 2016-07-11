@@ -34,7 +34,7 @@
 int main(){
     
     time_t t;
-    int i,j, count = 1000, pEncodedLen, pDecodedLen, errors, ret, maxEncodedLen = len_msg+6;
+    int i,j, count = 1000, pEncodedLen, pDecodedLen, errors, ret, maxEncodedLen = len_msg+4;
     unsigned char msg[len_msg], original_msg[len_msg];
     unsigned char pEncoded[maxEncodedLen], pDecoded[len_msg];
     
