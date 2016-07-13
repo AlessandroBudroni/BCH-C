@@ -82,8 +82,8 @@ struct gf_poly {
 
 /* polynomial of degree 1 */
 struct gf_poly_deg1 {
-        struct gf_poly poly;
-        unsigned int   c[2];
+    unsigned int   c[2];
+    struct gf_poly poly;
 };
 
 /*
