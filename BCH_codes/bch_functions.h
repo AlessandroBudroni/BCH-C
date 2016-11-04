@@ -16,6 +16,7 @@
  *
  * This library is a fork of http://lxr.free-electrons.com/source/lib/bch.c
  *
+ * Original author: Ivan Djelic <ivan.djelic@parrot.com>
  * Author: Alessandro Budroni
  *
  * Modifications: Creation of two functions to encode/decode 128-bit messages.
