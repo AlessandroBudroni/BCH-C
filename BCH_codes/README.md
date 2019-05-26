@@ -11,6 +11,6 @@
  $ make test
 ```
 
-The test performs the following thest on random 128-bit messages with 32-bit of redundancy:
+The test performs the following tests on random 128-bit messages with 32-bit of redundancy:
  - correct up to 4 errors
  - detect more than 4 errors 
